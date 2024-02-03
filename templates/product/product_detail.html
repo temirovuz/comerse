@@ -1,0 +1,13 @@
+{% extends 'base.html' %}
+
+{% block title %}Product detail{% endblock %}
+
+{% block body %}
+    {% if product %}
+        {{ product.title }}
+        {{ product.prise }}
+    {% else %}
+        no data
+    {% endif %}
+
+{% endblock %}
