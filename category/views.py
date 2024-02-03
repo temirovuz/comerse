@@ -10,6 +10,10 @@ class CategoryListView(ListView):
     template_name = 'category/home.html'
     context_object_name = 'categories'
 
+    def get_queryset(self):
+        qs = super(CategoryListView, self).get_queryset()
+        return qs.filter(parent=None)
+
 
 class SubCategoryListView(ListView):
     model = Category
