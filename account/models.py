@@ -30,6 +30,9 @@ class Company(models.Model):
 class Address(models.Model):
     text = models.CharField(max_length=255)
 
+    def __str__(self):
+        return self.text
+
 
 class Customer(models.Model):
     user = models.OneToOneField(User, on_delete=models.CASCADE, related_name='customer', null=True)
