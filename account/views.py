@@ -1,4 +1,4 @@
-from django.contrib.auth import authenticate, login
+from django.contrib.auth import authenticate, login, logout
 from django.http import HttpResponse
 from django.shortcuts import render, redirect
 
@@ -57,4 +57,5 @@ def Login_user(request):
 
 
 def Logout_user(request):
-    return render(request, 'account/home.html')
+    logout(request)
+    return redirect('base:home')
